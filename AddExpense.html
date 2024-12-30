@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .add-expense-button {
+            background-color: #28a745;
+            color: white;
+        }
+        .add-expense-button:hover {
+            background-color: #218838;
+        }
+        .set-budget-button {
+            background-color: #007bff;
+            color: white;
+        }
+        .set-budget-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Expense</h2>
+        <form action="AddExpenseServlet" method="post">
+            <!-- Expense ID -->
+            <label for="id">Expense ID:</label>
+            <input type="number" id="id" name="id" placeholder="Enter Expense ID" required>
+
+            <!-- Expense Name -->
+            <label for="expenseName">Expense Name:</label>
+            <input type="text" id="expenseName" name="expenseName" placeholder="Enter expense name" required>
+
+            <!-- Amount -->
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+
+            <!-- Date -->
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <!-- Category -->
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="Food">Food</option>
+                <option value="Travel">Travel</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <!-- Description -->
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" placeholder="Enter expense description"></textarea>
+
+            <!-- Buttons -->
+            <div class="button-container">
+                <button type="submit" class="add-expense-button">Add Expense</button>
+                <button type="button" class="set-budget-button" onclick="location.href='SetBudget.html';">Set Budget</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
